@@ -1,0 +1,23 @@
+type Order {
+    id: ID!
+    orderNumber: String!
+    customerName: String!
+    shippingAddress: String!
+    city: String!
+    state: String!
+    postalCode: String!
+    country: String!
+    orderDate: String!
+    status: String!
+}
+
+type OrderSummary {
+    orderNumber: String!
+    customerName: String!
+    shippingAddress: String!
+}
+
+type Query {
+    ordersByOrderNumber(orderNumber: String!): [Order]
+    orderSummariesByOrderNumber(orderNumber: String!): [OrderSummary]
+}
